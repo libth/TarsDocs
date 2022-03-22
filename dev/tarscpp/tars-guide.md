@@ -202,7 +202,7 @@ main(int argc, char* argv[])
 
 > * 对象HelloImp对服务的每个线程都有一个具体的实例，并且该HelloImp接口处理过程中，如果只是对HelloImp的成员变量来操作则是线程安全的，如果HelloImp接口中需要访问全局的对象，则需要加锁；
 > * ServerConfig::Application+“.”+ ServerConfig::ServerName + ".HelloObj"表示服务的Hello对象的名称，后续客户端通过这个名称来访问服务；
-> * 所有函数最有一个参数都是TarsCurrentPtr，通过该结构体可以获取请求包的所有原始内容；
+> * 所有函数最后一个参数都是TarsCurrentPtr，通过该结构体可以获取请求包的所有原始内容；
 > * HelloServer是自己实现的服务类，继承于服务框架的tars::Application类；
 
 ### 1.4. ServerConfig
